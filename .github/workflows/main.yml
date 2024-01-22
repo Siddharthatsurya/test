@@ -1,0 +1,12 @@
+name: Run-Schedule-Job-Util
+on:
+  schedule:
+    - cron: '*/3 * * * *'
+
+jobs:
+  Run-Schedule-Job-Util:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload nse archive files
+        run: |
+          curl --location 'https://nsearchives.nseindia.com/content/historical/EQUITIES/2023/NOV/cm30NOV2023bhav.csv.zip' --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36' --output file.zip
